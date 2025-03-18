@@ -78,6 +78,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    networks:
+      - n8n-network
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
@@ -89,7 +91,7 @@ services:
       n8n:
         condition: service_healthy
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      test: ["CMD", "curl", "-f", "http://localhost:2019/health"]
       interval: 10s
       timeout: 5s
       retries: 5
