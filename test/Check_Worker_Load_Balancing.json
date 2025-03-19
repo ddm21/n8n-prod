@@ -1,5 +1,5 @@
 {
-  "name": "Check Worker Load Balancing",
+  "name": "My workflow",
   "nodes": [
     {
       "parameters": {
@@ -10,26 +10,26 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [
-        0,
+        80,
         0
       ],
-      "id": "f8561ef7-d4dc-4501-bd68-a900dc456f57",
+      "id": "0504c48f-9783-4c95-b671-905deb052bfe",
       "name": "Webhook",
       "webhookId": "a22e6d86-7a39-4414-b2b0-29955e6ef4af"
     },
     {
       "parameters": {
         "respondWith": "json",
-        "responseBody": "={\n  \"containerId\": \"{{ $json.stdout === \"3fb1b6345768\" ? \"Running Worker 2\" : \"Running Worker 1\" }}\"\n} ",
+        "responseBody": "={\n  \"containerId\": \"{{ $json.stdout === \"3ddb1e064957\" ? \"Running Worker 3\" : $json.stdout === \"6810f1e3417a\" ? \"Running Worker 4\" : $json.stdout === \"6a240abbfc58\" ? \"Running Worker 2\" : $json.stdout === \"e07b9a0a662a\" ? \"Running Worker 1\" : \"Unknown Worker\" }}\"\n} ",
         "options": {}
       },
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
       "position": [
-        480,
+        540,
         0
       ],
-      "id": "13316a2b-cb4f-4b3e-9035-a80618513edd",
+      "id": "554c5753-254c-45f6-a3ad-32d2a4650aea",
       "name": "Respond to Webhook"
     },
     {
@@ -39,10 +39,10 @@
       "type": "n8n-nodes-base.executeCommand",
       "typeVersion": 1,
       "position": [
-        240,
+        300,
         0
       ],
-      "id": "a2e5964b-f2e9-49ba-a08e-09912576ea53",
+      "id": "b6847a9b-810c-4dfd-9595-261519cbb792",
       "name": "Execute Command"
     }
   ],
@@ -75,10 +75,10 @@
   "settings": {
     "executionOrder": "v1"
   },
-  "versionId": "3749b964-817c-449f-9807-1421e37c55b9",
+  "versionId": "edba9661-00c7-4ad3-866e-e068532b947b",
   "meta": {
     "instanceId": "58c6f21539a6cd5e4a7443ceb1780e9a34947f21e516189ebd8d658f6b8e4eb8"
   },
-  "id": "toNv1MDrVFElhHyz",
+  "id": "4NrKRYc7daKReAoj",
   "tags": []
 }
