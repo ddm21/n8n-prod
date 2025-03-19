@@ -13,6 +13,11 @@ chmod +x install_docker_nproxyman.sh
 ./install_docker_nproxyman.sh
 ```
 
+### ✅ give ./data folder permission
+```
+sudo chown -R 1000:1000 data/
+```
+
 ### ✅ To start it execute:
 ```
 docker-compose up -d
