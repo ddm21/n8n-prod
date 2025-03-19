@@ -22,8 +22,8 @@ x-shared: &shared
     - TZ=Asia/Kolkata
     - WEBHOOK_URL=https://${DOMAIN}
     - N8N_EDITOR_BASE_URL=https://${DOMAIN}
-    - N8N_ENDPOINT_WEBHOOK=prod/v1
-    - N8N_ENDPOINT_WEBHOOK_TEST=test/v1
+    - N8N_ENDPOINT_WEBHOOK=prod
+    - N8N_ENDPOINT_WEBHOOK_TEST=test
     - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
   links:
     - postgres
