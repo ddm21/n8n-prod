@@ -1,8 +1,0 @@
-{
-  email user@example.com  # Replace manually or use env expansion in Docker
-}
-
-n8n.example.com {  # Replace this with your actual domain
-  reverse_proxy n8n:5678
-  tls user@example.com  # Ensure SSL certificate is requested
-}
