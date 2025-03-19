@@ -54,7 +54,7 @@ services:
     image: redis:6-alpine
     restart: always
     volumes:
-      - .data/redis:/data
+      - ./data/redis:/data
     healthcheck:
       test: ['CMD', 'redis-cli', 'ping']
       interval: 5s
