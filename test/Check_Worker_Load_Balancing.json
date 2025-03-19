@@ -1,0 +1,84 @@
+{
+  "name": "Check Worker Load Balancing",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "test",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "f8561ef7-d4dc-4501-bd68-a900dc456f57",
+      "name": "Webhook",
+      "webhookId": "a22e6d86-7a39-4414-b2b0-29955e6ef4af"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"containerId\": \"{{ $json.stdout === \"3fb1b6345768\" ? \"Running Worker 2\" : \"Running Worker 1\" }}\"\n} ",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        480,
+        0
+      ],
+      "id": "13316a2b-cb4f-4b3e-9035-a80618513edd",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "command": "hostname"
+      },
+      "type": "n8n-nodes-base.executeCommand",
+      "typeVersion": 1,
+      "position": [
+        240,
+        0
+      ],
+      "id": "a2e5964b-f2e9-49ba-a08e-09912576ea53",
+      "name": "Execute Command"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Execute Command",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Command": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "3749b964-817c-449f-9807-1421e37c55b9",
+  "meta": {
+    "instanceId": "58c6f21539a6cd5e4a7443ceb1780e9a34947f21e516189ebd8d658f6b8e4eb8"
+  },
+  "id": "toNv1MDrVFElhHyz",
+  "tags": []
+}
