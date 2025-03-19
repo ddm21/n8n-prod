@@ -24,6 +24,7 @@ x-shared: &shared
     - N8N_EDITOR_BASE_URL=https://${DOMAIN}
     - N8N_ENDPOINT_WEBHOOK=prod/v1
     - N8N_ENDPOINT_WEBHOOK_TEST=test/v1
+    - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
   links:
     - postgres
     - redis
