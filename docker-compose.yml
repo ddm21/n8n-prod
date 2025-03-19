@@ -65,6 +65,15 @@ services:
       timeout: 5s
       retries: 10
 
+  nginx:
+    image: nginx:latest
+    container_name: nginx_proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+
   n8n:
     <<: *shared
     ports:
