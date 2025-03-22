@@ -16,7 +16,6 @@ x-shared: &shared
     - N8N_ENCRYPTION_KEY=${ENCRYPTION_KEY}
     - TZ=Asia/Kolkata
     - WEBHOOK_URL=https://${DOMAIN}
-    - N8N_EDITOR_BASE_URL=https://${DOMAIN}
     - N8N_ENDPOINT_WEBHOOK=prod
     - N8N_ENDPOINT_WEBHOOK_TEST=test
     - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
