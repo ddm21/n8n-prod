@@ -20,6 +20,8 @@ x-shared: &shared
     - N8N_ENDPOINT_WEBHOOK=prod
     - N8N_ENDPOINT_WEBHOOK_TEST=test
     - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
+    - QUEUE_BULL_REDIS_JOB_RETENTION_PERIOD=3600 # Time in seconds to keep completed jobs (1 hour)
+    - QUEUE_BULL_REDIS_FAILED_JOB_RETENTION_PERIOD=7200 # Time in seconds to keep failed jobs (2 hours)
   links:
     - postgres
     - redis
