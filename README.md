@@ -38,6 +38,11 @@ mv env.example .env && nano .env
 server_name n8n.yourdomain.com;
 ```
 
+### ✅ Give script to create postgress usr and manage permissons:
+```
+chmod +x init-data.sh
+```
+
 ### ✅ To start it execute:
 ```
 docker-compose up -d
