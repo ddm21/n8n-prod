@@ -22,6 +22,7 @@ x-shared: &shared
     - OFFLOAD_MANUAL_EXECUTIONS_TO_WORKERS=true
     - QUEUE_BULL_REDIS_JOB_RETENTION_PERIOD=3600 # Time in seconds to keep completed jobs (1 hour)
     - QUEUE_BULL_REDIS_FAILED_JOB_RETENTION_PERIOD=7200 # Time in seconds to keep failed jobs (2 hours)
+    - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
   links:
     - postgres
     - redis
