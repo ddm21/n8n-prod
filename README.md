@@ -23,9 +23,19 @@ git clone https://github.com/ddm21/n8n-prod.git && cd n8n-prod.git
 mkdir data
 ```
 
-### ✅ give ./data folder permission
+### ✅ Give ./data folder permission:
 ```
 sudo chown -R 1000:1000 data/
+```
+
+### ✅ Rename env.example and Modifiy:
+```
+mv env.example .env && nano .env
+```
+
+### ✅ Update you domain in nginx.conf:
+```
+server_name n8n.yourdomain.com;
 ```
 
 ### ✅ To start it execute:
