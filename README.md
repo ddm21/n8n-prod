@@ -13,6 +13,11 @@ chmod +x install_docker_nproxyman.sh
 ./install_docker_nproxyman.sh
 ```
 
+### ✅ Clone the Repository:
+```
+git clone https://github.com/ddm21/n8n-prod.git && cd n8n-prod.git
+```
+
 ### ✅ give ./data folder permission
 ```
 sudo chown -R 1000:1000 data/
